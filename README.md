@@ -22,10 +22,15 @@ footer(생략 가능) -> 꼬리말
 각 커밋 메시지 구조에는 규칙이 존재한다.
 아래에서 좋은 커밋 메시지를 만드는 규칙에 대해 언급하겠다.
 
+ex)
+>Feat: Add signin, signup 
+회원가입 기능, 로그인 기능 추가(예시를 위해 간단히 작성)  
+Resolves: #1
+
 ------------------
 
-✏️ Commit Type
-**Type**	**설명**
+✏️ Commit Type<br>
+**Type**	**설명**<br>
 Feat:	새로운 기능 추가 <br>
 Fix:	버그 수정 또는 typo <br>
 Refactor:	리팩토링 <br>
