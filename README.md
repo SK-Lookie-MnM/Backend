@@ -66,11 +66,11 @@ Body Rule
 3. 여러개의 이슈 번호는 ,로 구분
 4. 이슈 트래커 유형은 아래와 같다
 
-Issue Tracker	설명
-Fixes:	이슈 수정중(아직 해결되지 않은 경우)
-Resolves:	이슈를 해결한 경우
-Ref:	참조할 이슈가 있을 때 사용
-Related to:	해당 커밋에 관련된 이슈 번호(아직 해결되지 않은 경우)
-ex) Footer에 Fixes: #1 이라고 작성하고 commit을 할 경우, 자동으로 issue #1과 매칭이 된다.
-또한, Resolves: #1으로 이슈를 해결했다고 명시하면 그 이슈는 사라진다.한 번 써보면 감이 온다
+Issue Tracker	설명<br>
+Fixes:	이슈 수정중(아직 해결되지 않은 경우)<br>
+Resolves:	이슈를 해결한 경우<br>
+Ref:	참조할 이슈가 있을 때 사용<br>
+Related to:	해당 커밋에 관련된 이슈 번호(아직 해결되지 않은 경우)<br>
+ex) Footer에 Fixes: #1 이라고 작성하고 commit을 할 경우, 자동으로 issue #1과 매칭이 된다.<br>
+또한, Resolves: #1으로 이슈를 해결했다고 명시하면 그 이슈는 사라진다.한 번 써보면 감이 온다<br>
 
