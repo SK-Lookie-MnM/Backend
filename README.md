@@ -23,7 +23,7 @@ footer(생략 가능) -> 꼬리말
 아래에서 좋은 커밋 메시지를 만드는 규칙에 대해 언급하겠다.
 
 ex)
->Feat: Add signin, signup 
+>Feat: Add signin, signup <br>
 회원가입 기능, 로그인 기능 추가(예시를 위해 간단히 작성)  
 Resolves: #1
 
