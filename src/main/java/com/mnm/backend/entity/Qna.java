@@ -25,7 +25,7 @@ public class Qna {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private InquiryStatus status = InquiryStatus.PENDING;
+    private QnaStatus status = QnaStatus.PENDING;
 
     @Column(nullable = false, updatable = false)
     @CreationTimestamp
@@ -34,7 +34,7 @@ public class Qna {
     @Column(nullable = true)
     private LocalDateTime repliedAt;
 
-    public enum InquiryStatus {
+    public enum QnaStatus {
         PENDING, ANSWERED
     }
 
