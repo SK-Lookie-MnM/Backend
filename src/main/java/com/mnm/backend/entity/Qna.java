@@ -6,19 +6,19 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Inquiry")
-public class Inquiry {
+@Table(name = "Qna")
+public class Qna {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long inquiryId;
+    private Long qnaId;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String inquiryText;
+    private String question;
 
     @Column(nullable = true, columnDefinition = "TEXT")
     private String adminReply;
