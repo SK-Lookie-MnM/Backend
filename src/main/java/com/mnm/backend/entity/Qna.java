@@ -1,27 +1,31 @@
 package com.mnm.backend.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "Qna")
 public class Qna {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long qnaId;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user; // User 객체를 참조
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String question;
 
     @Column(nullable = true, columnDefinition = "TEXT")
-    private String adminReply;
+    private String answer;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

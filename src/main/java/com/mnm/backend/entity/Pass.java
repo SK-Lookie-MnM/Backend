@@ -10,7 +10,7 @@ public class Pass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long passId;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
