@@ -47,7 +47,7 @@ public class QnaService {
     public Qna updateQna(Long id, String answer) {
         Qna qna = getQnaById(id);
         qna.setAnswer(answer);
-        qna.setRepliedAt(LocalDateTime.now());
+        qna.setReplied_at(LocalDateTime.now());
         return qnaRepository.save(qna);
     }
 

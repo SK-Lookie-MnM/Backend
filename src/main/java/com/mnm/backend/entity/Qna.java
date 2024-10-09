@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "Qna")
+@Table(name = "\"Qna\"")
 public class Qna {
 
     @Id
@@ -33,13 +33,15 @@ public class Qna {
 
     @Column(nullable = false, updatable = false)
     @CreationTimestamp
-    private LocalDateTime createdAt;
+    private LocalDateTime created_at;
 
     @Column(nullable = true)
-    private LocalDateTime repliedAt;
+    private LocalDateTime replied_at;
+
 
     public enum QnaStatus {
         PENDING, ANSWERED
     }
+
 
 }

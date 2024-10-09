@@ -28,11 +28,11 @@ public class User {
     private Role role = Role.MEMBER; // 기본값으로 'member' 설정
 
     @Column(nullable = false, length = 100)
-    private String socialLoginId;
+    private String social_login_id;
 
     @Column(nullable = false, updatable = false)
     @CreationTimestamp
-    private LocalDateTime createdAt;
+    private LocalDateTime created_at;
 
     public enum Role {
         ADMIN, MANAGER, MEMBER
