@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    	#브랜치 전환 / 코드 가져오기
+    	# 브랜치 전환 & 코드 가져오기
       - name: Checkout
         uses: actions/checkout@v3
         
