@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app-blue:
+    image: hyouzl/mnm-backend-server:server-prod-blue
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=blue
+    networks:
+      - app-network
