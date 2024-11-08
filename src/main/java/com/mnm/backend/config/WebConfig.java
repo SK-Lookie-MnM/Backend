@@ -1,3 +1,4 @@
+
 package com.mnm.backend.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -17,3 +18,4 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
 }
+

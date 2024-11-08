@@ -2,6 +2,11 @@ spring:
   config:
     activate:
       on-profile: dev
+
+jwt:
+  header: Authorization
+  security-key: YmFzZTY0IGVuY29kZWQgNTI2IGJpdCBzZWNyZXQga2V5IHRoYXQgaXMgbGFyZ2Ugc2FmZSBhbmQgdXNlZCB3aXRoIEhTNTEy
+
 ---
 spring:
   config:

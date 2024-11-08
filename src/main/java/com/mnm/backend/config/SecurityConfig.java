@@ -1,11 +1,11 @@
 package com.mnm.backend.config;
 
 
+
 import com.mnm.backend.auth.filter.JwtFilter;
 import com.mnm.backend.auth.jwt.JwtAccessDeniedHandler;
 import com.mnm.backend.auth.jwt.JwtAuthenticationEntryPoint;
 import com.mnm.backend.auth.util.TokenProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +25,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import static org.apache.tomcat.jni.SSLConf.apply;
-
+import java.util.Arrays;
+import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
@@ -88,3 +89,5 @@ public class SecurityConfig {
     }
 
 }
+
+
