@@ -1,10 +1,15 @@
 package com.mnm.backend.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder
 @Table(name = "Passes")
 public class Pass {
 
@@ -14,7 +19,7 @@ public class Pass {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private Users users;
 
     //횟수권 구매 여부
     @Column(nullable = false)
