@@ -9,7 +9,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Allow all endpoints
-                .allowedOrigins( "https://mylookie.s3.ap-northeast-2.amazonaws.com") // Your S3 frontend URL
+                .allowedOrigins("http://localhost:3000", // Localhost for local testing
+                        "https://mylookie.s3.ap-northeast-2.amazonaws.com") // Your S3 frontend URL
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allowed HTTP methods
                 .allowedHeaders("*") // Allow all headers
                 .allowCredentials(true); // Allow cookies to be sent
