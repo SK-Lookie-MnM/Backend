@@ -26,9 +26,6 @@ public class UserSignUpDto {
     @NotNull(message = "대학교를 선택해주세요")
     private String university;
 
-    @NotNull(message = "소속 동아리를 선택해주세요")
-    private String club;
-
     @NotNull(message = "회원유형을 선택해주세요")
     private Role role;
 
@@ -41,7 +38,6 @@ public class UserSignUpDto {
                 .password(encodedPassword)
                 .email(email)
                 .role(role)
-                .club(club)
                 .name(name)
                 .university(university)
                 .nickname(setNickname())
@@ -50,7 +46,7 @@ public class UserSignUpDto {
 
 
     private String setNickname () {
-        String nickname = name+ "(" + university + "_" + club + ")";
+        String nickname = name+ "(" + university + "_MNM)";
         return nickname;
     }
 

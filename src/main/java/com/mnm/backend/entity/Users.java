@@ -35,9 +35,6 @@ public class Users extends BaseEntity {
     @Column(nullable = false)
     private String university;
 
-    @Column(nullable = false)
-    private String club;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     @Builder.Default
