@@ -40,6 +40,7 @@ public class Users extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Builder.Default
     private Role role = Role.MEMBER; // 기본값으로 'member' 설정
 
 

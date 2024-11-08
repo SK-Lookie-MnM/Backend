@@ -1,3 +1,4 @@
+/*
 package com.mnm.backend.entity;
 
 import jakarta.persistence.*;
@@ -45,4 +46,4 @@ public class Qna {
     }
 
 
-}
+}*/
