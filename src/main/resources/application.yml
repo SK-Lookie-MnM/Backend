@@ -7,6 +7,7 @@ spring:
   config:
     activate:
       on-profile: prod
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://database-1.cxkaquq6qa78.ap-northeast-2.rds.amazonaws.com:3306/MnM
@@ -18,4 +19,16 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        format_sql: true
+        format_sql : true
+
+
+jwt:
+  header: Authorization
+  security-key: YmFzZTY0IGVuY29kZWQgNTI2IGJpdCBzZWNyZXQga2V5IHRoYXQgaXMgbGFyZ2Ugc2FmZSBhbmQgdXNlZCB3aXRoIEhTNTEy
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.mnm.backend: DEBUG
+
+

@@ -1,15 +1,16 @@
 package com.mnm.backend.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder
 @Table(name = "\"Qna\"")
 public class Qna {
 
@@ -19,7 +20,7 @@ public class Qna {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = true)
-    private User user; // User 객체를 참조
+    private Users users; // User 객체를 참조
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String question;

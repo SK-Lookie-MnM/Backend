@@ -1,3 +1,4 @@
+/*
 package com.mnm.backend.service;
 
 import com.mnm.backend.dto.QnaDto;
@@ -52,3 +53,4 @@ public class QnaService {
     }
 
 }
+*/
