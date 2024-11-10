@@ -17,6 +17,8 @@ import org.springframework.security.config.annotation.web.configurers.HeadersCon
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.firewall.HttpFirewall;
+import org.springframework.security.web.firewall.StrictHttpFirewall;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -56,7 +58,7 @@ public class SecurityConfig {
                                 .accessDeniedHandler(jwtAccessDeniedHandler)
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("api/users/login","api/users/reissue","/api/users/signup", "/api/users/checkEmail", "/api/users/checkLoginId", "/error").permitAll()
+                        .requestMatchers("api/users/login","api/users/reissue","api/users/signup", "api/users/checkEmail", "/api/users/checkLoginId", "/error").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(
@@ -88,6 +90,16 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+
+    @Bean
+    public StrictHttpFirewall httpFirewall() {
+        StrictHttpFirewall firewall = new StrictHttpFirewall();
+        firewall.setAllowUrlEncodedPeriod(true);  // '%2e' (encoded dot) 허용
+        firewall.setAllowUrlEncodedSlash(true);   // '%2f' (encoded slash) 허용
+
+        return firewall;
+
+    }
 }
 
 
