@@ -13,8 +13,9 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:3000", // Localhost for local testing
                         "https://mylookie.s3.ap-northeast-2.amazonaws.com") // Your S3 frontend URL
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allowed HTTP methods
-                .allowedHeaders("*") // Allow all headers
+                .allowedHeaders("Origin", "Content-Type", "Accept", "Authorization") // Allow specific headers
                 .allowCredentials(true); // Allow cookies to be sent
+
     }
 
 }

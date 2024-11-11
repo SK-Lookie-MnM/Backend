@@ -49,7 +49,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         JwtFilter jwtFilter = new JwtFilter(tokenProvider);
         http
-                .cors(Customizer.withDefaults()) // CORS 설정 추가
+                .cors(cors -> cors
+                        .configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(exceptionHandling ->
@@ -58,7 +59,7 @@ public class SecurityConfig {
                                 .accessDeniedHandler(jwtAccessDeniedHandler)
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("api/users/login","api/users/reissue","api/users/signup", "api/users/checkEmail", "/api/users/checkLoginId", "/error").permitAll()
+                        .requestMatchers("/api/users/login","/api/users/reissue","/api/users/signup", "/api/users/checkEmail", "/api/users/checkLoginId", "/error").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(
@@ -76,7 +77,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Collections.singletonList("http://localhost:8080")); // 허용할 도메인 설정
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "https://mylookie.s3.ap-northeast-2.amazonaws.com"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
         configuration.setAllowCredentials(true);
@@ -100,6 +101,7 @@ public class SecurityConfig {
         return firewall;
 
     }
-}
+
+   }
 
 
